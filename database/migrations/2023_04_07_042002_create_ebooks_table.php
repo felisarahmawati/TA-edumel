@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId("kategori_id");
             $table->foreignId("subkategori_id");
-            $table->date("id_buku");
+            $table->string("id_buku");
             $table->string("cover");
             $table->string("file");
             $table->string("judul_buku");

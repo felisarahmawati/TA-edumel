@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BerandaController;
+use App\Http\Controllers\Admin\Akun\PetugasController;
 use App\Http\Controllers\Admin\Master\EbookController;
 use App\Http\Controllers\Admin\Master\LoginController;
 use App\Http\Controllers\Admin\Master\MadingController;
@@ -26,6 +27,14 @@ Route::group(['middleware' => ['cekUserLogin']], function() {
             Route::resource("/", KategoriController::class);
         });
 
+        Route::prefix("autentikasi")->group(function() {
+            Route::prefix("petugas")->group(function() {
+                Route::get("/edit", [PetugasController::class, "edit"]);
+                Route::get("/simpan", [PetugasController::class, "update"]);
+                Route::resource("/", PetugasController::class);
+            });
+        });
+
         Route::prefix("sub-kategori")->group(function() {
             Route::get("/edit", [SubKategoriController::class, "edit"]);
             Route::put("/simpan", [SubKategoriController::class, "update"]);
@@ -46,5 +55,28 @@ Route::group(['middleware' => ['cekUserLogin']], function() {
     });
 });
 
+Route::get("/laporanindex", function () {
+    return view('/admin/laporan/dataanggota/laporanindex');
+});
 
+Route::get("/dm_index", function () {
+    return view('/admin/laporan/datamading/dm_index');
+});
+
+Route::get("/de_index", function () {
+    return view('/admin/laporan/dataebook/de_index');
+});
+
+
+Route::get("/laporanindex", function () {
+    return view('/admin/laporan/dataanggota/laporanindex');
+});
+
+Route::get("/index", function () {
+    return view('/admin/autentikasi/anggota/index');
+});
+
+// Route::get("/p_index", function () {
+//     return view('/admin/autentikasi/petugas/p_index');
+// });
 

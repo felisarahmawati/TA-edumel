@@ -31,6 +31,11 @@
                         </div>
                     </div>
                 </div>
+                <div class="col-12 text-end">
+                    <div class="mt-4 text-end">
+                        <a href="#" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#exampleModalTambah" class="btn btn-primary fw-bold rounded-pill px-4 shadow btn-sm" style="border-radius: 10%;">Tambah +</a>
+                    </div>
+                </div>
             </div>
         </div>
 

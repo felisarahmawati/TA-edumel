@@ -32,7 +32,6 @@
                                     <th class="text-center">No.</th>
                                     <th class="text-center">Id Buku</th>
                                     <th class="text-center">Cover</th>
-                                    <th class="text-center">File</th>
                                     <th class="text-center">Judul</th>
                                     <th class="text-center">Kategori</th>
                                     <th class="text-center">Sub Kategori</th>
@@ -47,7 +46,6 @@
                                         <td class="text-center">{{ $loop->iteration }}</td>
                                         <td class="text-center">{{ $data->id_buku }}</td>
                                         <td class="text-center"><img src="{{ url('/storage/' .$data->cover)}}" style="width: 50%;"></td>
-                                        <td class="text-center">{{ $data->file }}</td>
                                         <td class="text-center">{{ $data->judul_buku }}</td>
                                         <td class="text-center">{{ $data->kategori->nama_kategori }}</td>
                                         <td class="text-center">{{ $data->subkategori->subkategori }}</td>

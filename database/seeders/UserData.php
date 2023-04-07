@@ -19,9 +19,23 @@ class UserData extends Seeder
             [
                 'name'  => 'Administrator',
                 'username' => 'admin',
-                'password' => bcrypt('admin'),
+                'password' => bcrypt('perpus123'),
                 'level' => 1,
                 'email' => 'admin@gmail.com'
+            ],
+            [
+                'name'  => 'Felisa Rahmawati',
+                'username' => 'felisa',
+                'password' => bcrypt('perpus123'),
+                'level' => 1,
+                'email' => 'felisa@gmail.com'
+            ],
+            [
+                'name'  => 'Rahmawati',
+                'username' => 'rahmawati',
+                'password' => bcrypt('perpus123'),
+                'level' => 1,
+                'email' => 'rahmawati@gmail.com'
             ],
             [
                 'name'  => 'Anggota',

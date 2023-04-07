@@ -1,11 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AnggotaController;
-use App\Http\Controllers\Admin\Master\EbookController;
 use App\Http\Controllers\LoginController as loginuser;
-use App\Http\Controllers\Admin\Master\MadingController;
-use App\Http\Controllers\Admin\Master\KategoriController;
+use App\Http\Controllers\LandingpageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -73,8 +70,8 @@ Route::group(['middleware' => ['cekUserLogin']], function() {
     // Route::resource('landingpage', AnggotaController::class);
     Route::prefix("user")->group(function() {
         Route::prefix("anggota")->group(function() {
-            Route::controller(AnggotaController::class)->group(function() {
-                Route::get("/landingpage", "indeex");
+            Route::controller(LandingpageController::class)->group(function() {
+                Route::get("/landingpage", "index");
                 Route::prefix("tampilan")->group(function() {
                     Route::get("/about", "about");
                     Route::get("/ebook", "ebook");
