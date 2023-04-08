@@ -28,9 +28,10 @@ return new class extends Migration
             $table->string('provinsi', 50)->nullable();
             $table->string('kecamatan')->nullable();
             $table->string('kota_kab')->nullable();
+            $table->text('alamat')->nullable();
             $table->string('kelurahan')->nullable();
 		    $table->integer('id_kodepos')->nullable();
-            $table->enum('keterangan', ["TU", "Siswa"])->nullable();
+            $table->enum('keterangan', ["tu", "siswa"])->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

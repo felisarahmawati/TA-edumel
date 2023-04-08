@@ -2,22 +2,23 @@
 
 namespace App\Http\Controllers\Admin\Master;
 
+use App\Models\User;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Models\Admin\Kategori;
 use App\Models\Admin\SubKategori;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class SubKategoriController extends Controller
 {
     public function index()
     {
-        $data = [
-            "sub_kategori" => SubKategori::get(),
-            "kategori" => Kategori::all()
-        ];
+        $sub_kategori = SubKategori::get();
+        $kategori = Kategori::all();
+        $user = User::findOrFail(Auth::id());
 
-        return view('admin.sub-kategori.index', $data);
+        return view('admin.sub-kategori.index', compact("sub_kategori", "kategori","user"));
     }
 
     public function store(Request $request)

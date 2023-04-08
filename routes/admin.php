@@ -2,12 +2,20 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BerandaController;
+use App\Http\Controllers\Admin\Akun\AnggotaController;
 use App\Http\Controllers\Admin\Akun\PetugasController;
+use App\Http\Controllers\Admin\Laporan\AnggotaController as LaporanAnggotaController;
+use App\Http\Controllers\Admin\Laporan\EbookController as LaporanEbookController;
+use App\Http\Controllers\Admin\Laporan\MadingController as LaporanMadingController;
 use App\Http\Controllers\Admin\Master\EbookController;
+use App\Http\Controllers\Admin\Verifikasi\EbookController as verebook;
 use App\Http\Controllers\Admin\Master\LoginController;
 use App\Http\Controllers\Admin\Master\MadingController;
 use App\Http\Controllers\Admin\Master\KategoriController;
 use App\Http\Controllers\Admin\Master\SubKategoriController;
+use App\Http\Controllers\Admin\Pengaturan\ProfileController;
+use App\Http\Controllers\Admin\Pengaturan\UbahPasswordController;
+use App\Http\Controllers\Admin\Verifikasi\MadingController as VerifikasiMadingController;
 
 Route::group(['middleware' => ['guest']], function() {
     Route::controller(LoginController::class)->group(function(){
@@ -21,19 +29,52 @@ Route::group(['middleware' => ['cekUserLogin']], function() {
     Route::get('logout', [LoginController::class, 'logout']);
 
     Route::prefix("admin")->group(function() {
-        Route::prefix("kategori")->group(function() {
-            Route::get("/edit", [KategoriController::class, "edit"]);
-            Route::put("/simpan", [KategoriController::class, "update"]);
-            Route::resource("/", KategoriController::class);
-        });
-
         Route::prefix("autentikasi")->group(function() {
             Route::prefix("petugas")->group(function() {
                 Route::get("/edit", [PetugasController::class, "edit"]);
                 Route::get("/simpan", [PetugasController::class, "update"]);
                 Route::resource("/", PetugasController::class);
             });
+            Route::prefix("anggota")->group(function() {
+                Route::get("/edit", [AnggotaController::class, "edit"]);
+                Route::get("/simpan", [AnggotaController::class, "update"]);
+                Route::resource("/", AnggotaController::class);
+            });
         });
+
+        Route::prefix("pengaturan")->group(function() {
+            Route::prefix("ubahpassword")->group(function() {
+                Route::resource("/", UbahPasswordController::class);
+            });
+        });
+
+        Route::prefix("verifikasi")->group(function() {
+            Route::prefix("v_ebook")->group(function() {
+                Route::resource("/", verebook::class);
+            });
+            Route::prefix("v_mading")->group(function() {
+                Route::resource("/", VerifikasiMadingController::class);
+            });
+        });
+
+        Route::prefix("laporan")->group(function() {
+            Route::prefix("dataanggota")->group(function() {
+                Route::resource("/", LaporanAnggotaController::class);
+            });
+            Route::prefix("dataebook")->group(function() {
+                Route::resource("/", LaporanEbookController::class);
+            });
+            Route::prefix("datamading")->group(function() {
+                Route::resource("/", LaporanMadingController::class);
+            });
+        });
+
+        Route::prefix("kategori")->group(function() {
+            Route::get("/edit", [KategoriController::class, "edit"]);
+            Route::put("/simpan", [KategoriController::class, "update"]);
+            Route::resource("/", KategoriController::class);
+        });
+
 
         Route::prefix("sub-kategori")->group(function() {
             Route::get("/edit", [SubKategoriController::class, "edit"]);
@@ -55,28 +96,8 @@ Route::group(['middleware' => ['cekUserLogin']], function() {
     });
 });
 
-Route::get("/laporanindex", function () {
-    return view('/admin/laporan/dataanggota/laporanindex');
+
+Route::controller(profileController::class)->group(function(){
+    Route::get('/admin/pengaturan/profile','index');
+    Route::patch('/profile/index/{id}','update')->name('profile.update');
 });
-
-Route::get("/dm_index", function () {
-    return view('/admin/laporan/datamading/dm_index');
-});
-
-Route::get("/de_index", function () {
-    return view('/admin/laporan/dataebook/de_index');
-});
-
-
-Route::get("/laporanindex", function () {
-    return view('/admin/laporan/dataanggota/laporanindex');
-});
-
-Route::get("/index", function () {
-    return view('/admin/autentikasi/anggota/index');
-});
-
-// Route::get("/p_index", function () {
-//     return view('/admin/autentikasi/petugas/p_index');
-// });
-

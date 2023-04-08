@@ -2,19 +2,21 @@
 
 namespace App\Http\Controllers\Admin\Master;
 
+use App\Models\User;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Models\Admin\Kategori;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class KategoriController extends Controller
 {
     public function index()
     {
-        $data = [
-            "kategori" => Kategori::get()
-        ];
-        return view('admin.kategori.v_index', $data);
+        $user = User::findOrFail(Auth::id());
+        $kategori = Kategori::get();
+
+        return view('admin.kategori.v_index', compact("user","kategori"));
     }
 
     public function store(Request $request)

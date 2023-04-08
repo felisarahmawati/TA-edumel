@@ -31,7 +31,7 @@
 
                 <li class="nav-item">
                     <a href="{{ url('/admin/sub-kategori') }}" class="nav-link">
-                        <i class="link-icon" data-feather="file"></i>
+                        <i class="link-icon" data-feather="file-text"></i>
                         <span class="link-title">Sub Kategori</span>
                     </a>
                 </li>
@@ -52,13 +52,13 @@
 
                 <li class="nav-item nav-category">Verifikasi</li>
                 <li class="nav-item">
-                    <a href="{{ url("/laporanindex") }}" class="nav-link">
+                    <a href="{{ url("/admin/verifikasi/v_ebook") }}" class="nav-link">
                         <i class="link-icon" data-feather="check-circle"></i>
                         <span class="link-title">Buku</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ url("/laporanindex") }}" class="nav-link">
+                    <a href="{{ url("/admin/verifikasi/v_mading") }}" class="nav-link">
                         <i class="link-icon" data-feather="check-square"></i>
                         <span class="link-title">Mading</span>
                     </a>
@@ -66,21 +66,21 @@
 
                 <li class="nav-item nav-category">Laporan</li>
                 <li class="nav-item">
-                    <a href="{{ url("/laporanindex") }}" class="nav-link">
+                    <a href="{{ url("/admin/laporan/dataanggota") }}" class="nav-link">
                         <i class="link-icon" data-feather="folder"></i>
                         <span class="link-title">Data Anggota</span>
                     </a>
                 </li>
 
                 <li class="nav-item">
-                    <a href="{{ url("/de_index") }}" class="nav-link">
+                    <a href="{{ url("/admin/laporan/dataebook") }}" class="nav-link">
                         <i class="link-icon" data-feather="book"></i>
                         <span class="link-title">Data Ebook</span>
                     </a>
                 </li>
 
                 <li class="nav-item">
-                    <a href="{{ url("/dm_index") }}" class="nav-link">
+                    <a href="{{ url("/admin/laporan/datamading") }}" class="nav-link">
                         <i class="link-icon" data-feather="clipboard"></i>
                         <span class="link-title">Data Mading</span>
                     </a>
@@ -95,8 +95,8 @@
                 </li>
 
                 <li class="nav-item">
-                    <a href="{{ url('/index') }}" class="nav-link">
-                        <i class="link-icon" data-feather="book-open"></i>
+                    <a href="{{ url("/admin/autentikasi/anggota") }}" class="nav-link">
+                        <i class="link-icon" data-feather="users"></i>
                         <span class="link-title">Anggota</span>
                     </a>
                 </li>

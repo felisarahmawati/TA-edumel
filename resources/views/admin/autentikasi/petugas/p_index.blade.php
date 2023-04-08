@@ -44,7 +44,7 @@
                                         <td style="size: 20px;">
                                             <div class="row">
                                                 <div class="col-md-8 text-end">
-                                                    <button type="button" class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModalDetail">
+                                                    <button type="button" class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal{{$data->id}}">
                                                         Detail
                                                     </button>
                                                 </div>
@@ -133,6 +133,47 @@
         </div>
     </div>
 </div>
+
+@foreach ($petugas as $data)
+    <div class="modal fade" id="exampleModal{{ $data->id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" style="width: 40%">
+            <div class="modal-content">
+                <div class="modal-header hader">
+                    <h2 class="modal-title" id="exampleModalLabel">Data Petugas</h2>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="modal-content-detail">
+                    <div class="card-body">
+                        <div class="form-group row">
+                            <label for="username" class="col-sm-2 col-form-label text-right">Username</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="username" value="{{ $data->username }}" readonly>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="form-group row">
+                            <label for="name" class="col-sm-2 col-form-label text-right">Nama</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="name" value="{{ $data->name }}" readonly>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="form-group row">
+                            <label for="email" class="col-sm-2 col-form-label text-right"> Email </label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="email" value="{{ $data->email }}" readonly>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="modal-footer d-md-block">
+                        <button type="button" class="btn-sm btn-danger" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+@endforeach
 @endsection
 
 @section('js')
@@ -140,19 +181,5 @@
 <script src="{{ url('') }}/assets/admin/vendors/datatables.net/jquery.dataTables.js"></script>
 <script src="{{ url('') }}/assets/admin/vendors/datatables.net-bs5/dataTables.bootstrap5.js"></script>
 <script src="{{ url('') }}/assets/admin/js/data-table.js"></script>
-<script type="text/javascript">
-    function detailPetugas(id) {
-        $.ajax({
-            url: "{{ url('/admin/autentikasi/petugas/detail') }}",
-            type: "GET",
-            data: {
-                id: id
-            },
-            success: function(data) {
-                $("#modal-content-detail").html(data);
-                return true
-            }
-        })
-    }
-</script>
+
 @endsection

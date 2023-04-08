@@ -2,24 +2,26 @@
 
 namespace App\Http\Controllers\Admin\Master;
 
+use App\Models\User;
 use App\Models\Admin\Ebook;
 use Illuminate\Http\Request;
 use App\Models\Admin\Kategori;
 use App\Models\Admin\SubKategori;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
 class EbookController extends Controller
 {
     public function index()
     {
-        $data = [
-            "buku" => Ebook::get(),
-            "subkategori" => SubKategori::all(),
-            "kategori" => Kategori::all()
-        ];
 
-        return view("admin.buku.v_index", $data);
+        $buku = Ebook::get();
+        $subkategori = SubKategori::all();
+        $kategori = Kategori::all();
+        $user = User::findOrFail(Auth::id());
+
+        return view("admin.buku.v_index", compact("buku", "subkategori", "kategori", "user"));
     }
 
     public function store(Request $request)

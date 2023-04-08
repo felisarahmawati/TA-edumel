@@ -2,19 +2,19 @@
 
 namespace App\Http\Controllers\Admin\Akun;
 
-use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class PetugasController extends Controller
 {
-    public function index(Request $request)
+    public function index()
     {
-        $search = $request->search;
-        $data = [
-            "petugas" => User::get()
-        ];
-        return view('admin.autentikasi.petugas.p_index', $data);
+        $petugas = User::where("level", 1)->get();
+        $user = User::findOrFail(Auth::id());
+
+        return view('admin.autentikasi.petugas.p_index', compact("petugas", "user"));
     }
 
     public function store(Request $request)

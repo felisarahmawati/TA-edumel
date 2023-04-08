@@ -30,7 +30,6 @@
                             <thead>
                                 <tr>
                                     <th class="text-center">No.</th>
-                                    <th class="text-center">Foto</th>
                                     <th class="text-center">Nama</th>
                                     <th class="text-center">NIS</th>
                                     <th class="text-center">Email</th>
@@ -40,7 +39,35 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                @foreach ($anggota as $data)
+                                    <tr>
+                                        <td class="text-center">{{ $loop->iteration }}</td>
+                                        <td class="text-center">{{ $data->name }}</td>
+                                        <td class="text-center">{{ $data->username }}</td>
+                                        <td class="text-center">{{ $data->email }}</td>
+                                        <td class="text-center">{{ $data->alamat }}</td>
+                                        <td class="text-center">{{ $data->keterangan }}</td>
+                                        <td style="size: 20px;">
+                                            <div class="row">
+                                                <div class="col-md-6 text-end">
+                                                    <button onclick="" type="button" class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModalEdit">
+                                                        <i class="bi bi-pencil-square"></i>
+                                                    </button>
+                                                </div>
 
+                                                <div class="col-md-3 text-end">
+                                                    <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="" method="POST">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                        <button class="btn btn-danger btn-sm" type="submit">
+                                                            <i class="bi bi-trash"></i>
+                                                        </button>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>
@@ -73,15 +100,15 @@
                         <div class="col-sm-6">
                             <div class="mb-3">
                                 <label class="nama">Nama</label>
-                                <input type="text" name="nama" class="form-control @error('nama') is-invalid @enderror" placeholder="Masukkan nama">
+                                <input type="text" name="name" class="form-control @error('nama') is-invalid @enderror" placeholder="Masukkan nama">
                             </div>
                         </div><!-- Col -->
                     </div><!-- Row -->
                     <div class="row">
                         <div class="col-sm-6">
                             <div class="mb-3">
-                                <label class="nis">NIS</label>
-                                <input type="text" name="nis" class="form-control @error('nis') is-invalid @enderror" placeholder="Masukkan nis">
+                                <label class="username">NIS</label>
+                                <input type="text" name="username" class="form-control @error('username') is-invalid @enderror" placeholder="Masukkan username">
                             </div>
                         </div><!-- Col -->
                         <div class="col-sm-6">
@@ -94,20 +121,23 @@
                     <div class="row">
                         <div class="col-sm-12">
                             <div class="mb-3">
-                                <label class="form-label">Foto</label>
-                                <input type="file" name="foto" class="form-control @error('foto') is-invalid @enderror">
+                                <label>Keterangan</label>
+                                <div>
+                                    <select class="form-control mb-3" name="keterangan">
+                                        <option>-- Pilih saja --</option>
+                                        <option value="TU">TU</option>
+                                        <option value="Siswa">Siswa</option>
+                                    </select>
+                                    @error('keterangan')
+                                        <p class="text-danger">{{$message}}</p>
+                                    @enderror
+                                </div>
                             </div>
                         </div><!-- Col -->
                         <div class="col-sm-12">
                             <div class="mb-3">
-                                <label class="keterangan">Keterangan</label>
-                                <div>
-                                    <select class="form-select" name="keterangan" id="keterangan">
-                                        <option value="">-- Pilih --</option>
-                                        <option value="">TU</option>
-                                        <option value="">Siswa</option>
-                                    </select>
-                                </div>
+                                <label class="form-label">Password</label>
+                                <input type="password" name="password" class="form-control @error('password') is-invalid @enderror" placeholder="Masukkan password">
                             </div>
                         </div><!-- Col -->
                     </div><!-- Row -->

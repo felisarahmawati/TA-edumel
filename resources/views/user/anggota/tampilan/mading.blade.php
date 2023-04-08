@@ -31,10 +31,11 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 text-end">
-                    <div class="mt-4 text-end">
-                        <a href="#" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#exampleModalTambah" class="btn btn-primary fw-bold rounded-pill px-4 shadow btn-sm" style="border-radius: 10%;">Tambah +</a>
-                    </div>
+                <div class="mt-2 text-end">
+                    <button type="button" class="btn btn-outline-primary btn-icon-text me-2 mb-2 mb-md-0">
+                        <i class="btn-icon-prepend" data-feather="printer"></i>
+                        Ajukan Mading
+                    </button>
                 </div>
             </div>
         </div>

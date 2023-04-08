@@ -2,21 +2,22 @@
 
 namespace App\Http\Controllers\Admin\Master;
 
+use App\Models\User;
 use Illuminate\Support\Str;
 use App\Models\Admin\Mading;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
 class MadingController extends Controller
 {
     public function index()
     {
-        $data = [
-            "data_mading" => Mading::get()
-        ];
+        $user = User::findOrFail(Auth::id());
+        $data_mading = Mading::get();
 
-        return view('admin.majding.v_index', $data);
+        return view('admin.majding.v_index', compact("user", "data_mading"));
     }
 
     public function store(Request $request)
