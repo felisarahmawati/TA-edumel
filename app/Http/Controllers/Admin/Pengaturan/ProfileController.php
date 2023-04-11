@@ -45,6 +45,18 @@ class ProfileController extends Controller
         $user->kecamatan = $request->kecamatan;
         $user->kota_kab = $request->kota_kab;
 
+        if ($request->filled('old_password')) { //update password lama ke baru
+            if (Hash::check($request->old_password, $user->password)) {
+                $user->update([
+                    'password' => Hash::make($request->password)
+                ]);
+            }else {
+                return back()
+                    ->withErrors(['old_password' => __('Please enter the correct password')])
+                    ->withInput();
+            }
+        }
+
         if(request()->hasFile('photo')) {
             if($user->photo && file_exists(storage_path('app/public/photos/' . $user->photo))){
                 Storage::delete('app/public/photos/'.$user->photo);
@@ -60,19 +72,5 @@ class ProfileController extends Controller
         $user->save();
 
         return back()->with('status', 'Profile berhasil di updated!');
-    }
-
-    public function updateprofile(Request $request)
-    {
-        $request->validate([
-            "name" => ['string', 'min:3', 'max:191', 'required'],
-            "email" => ['email', 'string', 'min:3', 'max:191','required'],
-            "no_telp" => ['string', 'min:11', 'max:12', 'required'],
-            "tgl_lahir" => ['date', 'required'],
-            "alamat" => ['string', 'min:3', 'max:191'],
-            "kelurahan" => ['string', 'min:3', 'max:191'],
-            "kecamatan" => ['string', 'min:3', 'max:191'],
-            "kota_kab" => ['string', 'min:3', 'max:191'],
-        ]);
     }
 }

@@ -32,17 +32,21 @@ Route::group(['middleware' => ['cekUserLogin']], function() {
         Route::prefix("autentikasi")->group(function() {
             Route::prefix("petugas")->group(function() {
                 Route::get("/edit", [PetugasController::class, "edit"]);
-                Route::get("/simpan", [PetugasController::class, "update"]);
+                Route::put("/simpan", [PetugasController::class, "update"]);
                 Route::resource("/", PetugasController::class);
             });
             Route::prefix("anggota")->group(function() {
                 Route::get("/edit", [AnggotaController::class, "edit"]);
-                Route::get("/simpan", [AnggotaController::class, "update"]);
+                Route::put("/simpan", [AnggotaController::class, "update"]);
                 Route::resource("/", AnggotaController::class);
             });
         });
 
         Route::prefix("pengaturan")->group(function() {
+            // Route::prefix("profile")->group(function() {
+            //     Route::patch('/index/{id}',ProfileController::class, 'update');
+            //     Route::resource('/', ProfileController::class);
+            // });
             Route::prefix("ubahpassword")->group(function() {
                 Route::resource("/", UbahPasswordController::class);
             });
@@ -74,7 +78,6 @@ Route::group(['middleware' => ['cekUserLogin']], function() {
             Route::put("/simpan", [KategoriController::class, "update"]);
             Route::resource("/", KategoriController::class);
         });
-
 
         Route::prefix("sub-kategori")->group(function() {
             Route::get("/edit", [SubKategoriController::class, "edit"]);

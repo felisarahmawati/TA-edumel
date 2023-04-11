@@ -32,7 +32,15 @@
                                 <div class="card-body">
                                     <div class="form-group">
                                         <div class="mb-3 row">
-                                            <label for="name" class="form-label col-md-3 text-right"> Nama :  </label>
+                                            <label for="username" class="form-label col-md-3 text-right"> Username   </label>
+                                            <div class="col-md-7">
+                                                <input type="text" class="form-control" name="username" id="username" placeholder="Masukkan Nama" value="{{ Auth::user()->username }}">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="mb-3 row">
+                                            <label for="name" class="form-label col-md-3 text-right"> Nama   </label>
                                             <div class="col-md-7">
                                                 <input type="text" class="form-control" name="name" id="name" placeholder="Masukkan Nama" value="{{ Auth::user()->name }}">
                                             </div>
@@ -40,7 +48,7 @@
                                     </div>
                                     <div class="form-group">
                                         <div class="mb-3 row">
-                                            <label for="email" class="form-label col-md-3 text-right"> Email :  </label>
+                                            <label for="email" class="form-label col-md-3 text-right"> Email   </label>
                                             <div class="col-md-7">
                                                 <input type="email" class="form-control" name="email" id="email" placeholder="Masukkan Email" value="{{ Auth::user()->email }}">
                                             </div>

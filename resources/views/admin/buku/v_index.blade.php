@@ -32,6 +32,7 @@
                                     <th class="text-center">No.</th>
                                     <th class="text-center">Id Buku</th>
                                     <th class="text-center">Cover</th>
+                                    <th class="text-center">File</th>
                                     <th class="text-center">Judul</th>
                                     <th class="text-center">Kategori</th>
                                     <th class="text-center">Sub Kategori</th>
@@ -44,8 +45,10 @@
                                 @foreach ($buku as $data )
                                     <tr>
                                         <td class="text-center">{{ $loop->iteration }}</td>
-                                        <td class="text-center">{{ $data->id_buku }}</td>
-                                        <td class="text-center"><img src="{{ url('/storage/' .$data->cover)}}" style="width: 50%;"></td>
+                                        <td class="text-center">{{ $data->id }}</td>
+                                        <td class="text-center"><img src="{{ url('/storage/' .$data->cover)}}" style="width: 50%;" style="height: 50%;"></td>
+                                        <td class="text-center"><a href="{{url('/storage/' .$data->file) }}"><i class="link-icon" data-feather="file-text"></i></a></td>
+                                        {{-- <td class="text-center">{{ $data->file }}</td> --}}
                                         <td class="text-center">{{ $data->judul_buku }}</td>
                                         <td class="text-center">{{ $data->kategori->nama_kategori }}</td>
                                         <td class="text-center">{{ $data->subkategori->subkategori }}</td>
@@ -135,7 +138,7 @@
                         <div class="col-sm-6">
                             <div class="mb-3">
                                 <label class="file">File</label>
-                                <input type="file" name="file" class="form-control" placeholder="Tambahkan file">
+                                <input type="file" name="file" class="form-control @error('file') is-invalid @enderror" placeholder="Tambahkan file">
                             </div>
                         </div><!-- Col -->
                     </div><!-- Row -->
@@ -177,7 +180,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
 
-            <form action="{{ url('/admin/buku/simpan') }}" method="POST">
+            <form action="{{ url("/admin/buku") }}" method="POST">
                 @method("PUT")
                 {{ csrf_field() }}
                 <div class="modal-body" id="modal-content-edit">

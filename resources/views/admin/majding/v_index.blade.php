@@ -110,7 +110,7 @@
                 </div>
             </div>
             <div class="modal-footer d-md-block">
-                <button type="submit" class="btn btn-primary btn-sm">Simpan</button>
+                <button type="submit" class="btn btn-success btn-sm">Simpan</button>
                 <button type="button" class="btn btn-danger btn-sm">Batal</button>
             </div>
         </form>
@@ -118,6 +118,7 @@
     </div>
 </div>
 
+{{-- Edit --}}
 <div class="modal fade" id="exampleModalEdit" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg" style="width:40%">
         <div class="modal-content">

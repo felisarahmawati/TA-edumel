@@ -6,7 +6,7 @@
   <meta name="keywords" content="education,edumel,instructor,lms,online,instructor,dreambuzz,bootstrap,kindergarten,tutor,e learning">
   <meta name="author" content="dreambuzz">
 
-  <title>Edumel- Education Html Template</title>
+  <title>Edumel- Login Pengunjung</title>
 
   <!-- Mobile Specific Meta-->
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -50,7 +50,7 @@
                         @csrf
                         <div class="mb-3">
                             <label for="username" class="form-label">Username</label>
-                            <input type="text" name="username" class="form-control" id="username" placeholder="Username">
+                            <input type="text" name="username" class="form-control" id="username" placeholder="Masukkan Nomor Induk Siswa">
                             @error('username')
                                 <div class="invalid-feedback">
                                     {{ $message }}
@@ -59,8 +59,8 @@
                         </div>
 
                         <div class="mb-3">
-                            <label for="password" class="form-label">Password</label>
-                            <input type="password" name="password" class="form-control" id="password" autocomplete="current-password" placeholder="Password">
+                            <label for="password" class="form-label">Instansi Sekolah</label>
+                            <input type="password" name="password" class="form-control" id="password" autocomplete="current-password" placeholder="Masukkan Instansi Sekolah">
                             @error('password')
                                 <div class="invalid-feedback">
                                     {{ $message }}

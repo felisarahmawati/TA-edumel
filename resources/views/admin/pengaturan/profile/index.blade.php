@@ -46,7 +46,7 @@
                                         <div class="bt">
                                             {{-- <button class="btn btn-outline-thema"> Edit </button> --}}
                                             <button onclick="" class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModalEdit" class="btn btn-primary fw-bold rounded-pill px-4 shadow float-end">
-                                                <i class="bi bi-pencil-square"></i> Edit
+                                                <i class="bi bi-pencil-square"></i> Update
                                             </button>
                                         </div>
                                     </div>

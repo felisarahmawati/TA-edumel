@@ -6,7 +6,7 @@
   <meta name="keywords" content="education,edumel,instructor,lms,online,instructor,dreambuzz,bootstrap,kindergarten,tutor,e learning">
   <meta name="author" content="dreambuzz">
 
-  <title>Edumel- Education Html Template</title>
+  <title>Edumel- Login Petugas</title>
 
   <!-- Mobile Specific Meta-->
   <meta name="viewport" content="width=device-width, initial-scale=1">

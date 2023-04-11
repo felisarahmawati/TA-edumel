@@ -19,7 +19,7 @@
                     @if($user->photo)
                         <img src="{{ asset("storage/photos/".$user->photo) }}" alt="" class="wd-30 ht-30 rounded-circle" class="img-thumbnail rounded-circle mx-auto d-block">
                     @else
-                        <img src="/../../assets/admin/images/profile.png" alt="" style="width: 130px; height:130px" class="img-thumbnail rounded-circle mx-auto d-block">
+                        <img src="/../../assets/admin/images/profile.png" alt="" class="wd-30 ht-30 rounded-circle" class="img-thumbnail rounded-circle mx-auto d-block">
                     @endif
                 </a>
 
@@ -29,7 +29,7 @@
                             @if($user->photo)
                             <img src="{{ asset("storage/photos/".$user->photo) }}" alt="" class="wd-80 ht-80 rounded-circle" class="img-thumbnail rounded-circle mx-auto d-block">
                         @else
-                            <img src="/../../assets/admin/images/profile.png" alt="" style="width: 130px; height:130px" class="img-thumbnail rounded-circle mx-auto d-block">
+                            <img src="/../../assets/admin/images/profile.png" alt="" class="wd-30 ht-30 rounded-circle" class="img-thumbnail rounded-circle mx-auto d-block">
                         @endif
                         </div>
 
