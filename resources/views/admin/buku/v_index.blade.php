@@ -46,8 +46,8 @@
                                     <tr>
                                         <td class="text-center">{{ $loop->iteration }}</td>
                                         <td class="text-center">{{ $data->id }}</td>
-                                        <td class="text-center"><img src="{{ url('/storage/' .$data->cover)}}" style="width: 50%;" style="height: 50%;"></td>
-                                        <td class="text-center"><a href="{{url('/storage/' .$data->file) }}"><i class="link-icon" data-feather="file-text"></i></a></td>
+                                        <td class="text-center"><img src="{{ url('/storage/' .$data->cover) }}" style="width: 50%;" style="height: 50%;"></td>
+                                        <td class="text-center"><a href="{{ url('/storage/' .$data->file) }}"><i class="link-icon" data-feather="file-text"></i></a></td>
                                         {{-- <td class="text-center">{{ $data->file }}</td> --}}
                                         <td class="text-center">{{ $data->judul_buku }}</td>
                                         <td class="text-center">{{ $data->kategori->nama_kategori }}</td>
@@ -55,7 +55,7 @@
                                         <td class="text-center">{{ $data->penulis }}</td>
                                         <td class="text-center">{{ $data->tahun_terbit }}</td>
                                         <td class="text-center">
-                                            <button onclick="editBuku({{ $data->id }})" type="button" class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModalEdit">
+                                            <button onclick="editEbookbuku({{ $data->id }})" type="button" class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModalEdit">
                                                 <i class="bi bi-pencil-square"></i>
                                             </button>
                                             <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#exampleModalHapus-}">
@@ -156,9 +156,7 @@
                             </div>
                         </div><!-- Col -->
                     </div><!-- Row -->
-
                 </div>
-
                 <div class="modal-footer d-md-block">
                     <button type="submit" class="btn btn-success btn-sm">Simpan</button>
                     <button type="button" class="btn btn-danger btn-sm">Batal</button>
@@ -171,7 +169,7 @@
 
 <!-- Form Edit -->
 <div class="modal fade" id="exampleModalEdit" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg" style="width: 40%">
+    <div class="modal-dialog modal-lg" style="width: 50%">
         <div class="modal-content">
             <div class="modal-header hader">
                 <h3 class="modal-title" id="exampleModalLabel">
@@ -180,7 +178,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
 
-            <form action="{{ url("/admin/buku") }}" method="POST">
+            <form action="{{ url("/admin/buku/simpan") }}" method="POST">
                 @method("PUT")
                 {{ csrf_field() }}
                 <div class="modal-body" id="modal-content-edit">
@@ -201,12 +199,12 @@
 <script src="{{ url('') }}/assets/admin/vendors/datatables.net-bs5/dataTables.bootstrap5.js"></script>
 <script src="{{ url('') }}/assets/admin/js/data-table.js"></script>
 <script type="text/javascript">
-    function editBuku(id) {
+    function editEbookbuku(id) {
         $.ajax({
             url: "{{ url('/admin/buku/edit') }}",
             type: "GET",
             data: {
-                id: id
+                id:id
             },
             success: function(data) {
                 $("#modal-content-edit").html(data);

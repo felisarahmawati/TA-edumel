@@ -3,7 +3,7 @@
     <label for="image_new"> Gambar </label>
     <br><br>
     <img src="{{ url('/storage/' .$edit->image)}}" style="width: 35%;"><br><br>
-    <input type="file" class="form-control" name="image_new" id="image_new">
+    <input type="file" class="form-control" name="image" id="image_new">
 </div>
 
 <div class="form-group">

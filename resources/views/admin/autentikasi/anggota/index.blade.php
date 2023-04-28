@@ -31,10 +31,9 @@
                                 <tr>
                                     <th class="text-center">No.</th>
                                     <th class="text-center">Nama</th>
-                                    <th class="text-center">Foto</th>
+                                    {{-- <th class="text-center">Foto</th> --}}
                                     <th class="text-center">NIS</th>
                                     <th class="text-center">Email</th>
-                                    <th class="text-center">Alamat</th>
                                     <th class="text-center">Keterangan</th>
                                     <th class="text-center">Aksi</th>
                                 </tr>
@@ -44,18 +43,22 @@
                                     <tr>
                                         <td class="text-center">{{ $loop->iteration }}</td>
                                         <td class="text-center">{{ $data->name }}</td>
-                                        <td class="text-center"><img src="{{ url('/storage/' .$data->photo)}}" class="wd-100 ht-100 rounded-circle"></td>
+                                        {{-- <td class="text-center"><img src="{{ url('/storage/' .$data->photo)}}" class="wd-100 ht-100 rounded-circle"></td> --}}
                                         <td class="text-center">{{ $data->username }}</td>
                                         <td class="text-center">{{ $data->email }}</td>
                                         <td class="text-center">{{ $data->keterangan }}</td>
                                         <td style="size: 20px;">
                                             <div class="row">
-                                                <div class="col-md-6 text-end">
+                                                <div class="col-md-3 text-end">
                                                     <button onclick="editAnggota({{ $data->id }})" type="button" class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModalEdit">
                                                         <i class="bi bi-pencil-square"></i>
                                                     </button>
                                                 </div>
-
+                                                <div class="col-md-3 text-end">
+                                                    <button onclick="" type="button" class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModalDetail">
+                                                        <i class="bi bi-list"></i>
+                                                    </button>
+                                                </div>
                                                 <div class="col-md-3 text-end">
                                                     <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="" method="POST">
                                                         @csrf

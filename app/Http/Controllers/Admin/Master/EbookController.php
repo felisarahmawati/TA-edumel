@@ -26,9 +26,9 @@ class EbookController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
+            "id_buku"   => '',
             "kategori_id"   => '',
             "subkategori_id"   => '',
-            "id_buku"       => '',
             "cover"         => 'mimes:jpg,jpeg,png',
             "file"          => 'mimes:doc,docx,pdf,xls,xlxs,PDF,ppt,pptx',
             "judul_buku"    => '',
@@ -45,9 +45,9 @@ class EbookController extends Controller
         }
 
         Ebook::create([
+            "id_buku"   => $request->id_buku,
             "kategori_id"   => $request->kategori_id,
             "subkategori_id" => $request->subkategori_id,
-            "id_buku"       => $request->id_buku,
             "cover"         => $data,
             "file"          => $file,
             "judul_buku"    => $request->judul_buku,
@@ -61,6 +61,8 @@ class EbookController extends Controller
     public function edit(Request $request)
     {
         $data = [
+            "subkategori" => SubKategori::all(),
+            "kategori" => Kategori::all(),
             "edit" => Ebook::where("id", $request->id)->first()
         ];
 
@@ -70,11 +72,10 @@ class EbookController extends Controller
     public function update(Request $request)
     {
         $this->validate($request, [
+            "id_buku"   => '',
             "kategori_id"   => '',
             "subkategori_id"=> '',
-            "id_buku"       => '',
             "cover"         => 'mimes:jpg,jpeg,png',
-            "file"          => 'mimes:doc,docx,pdf,xls,xlxs,PDF,ppt,pptx',
             "judul_buku"    => '',
             "penulis"       => '',
             "tahun_terbit"  => '',
@@ -90,22 +91,22 @@ class EbookController extends Controller
             $data = $request->gambarLama;
         }
 
-        if($request->file("file_new")) {
-            if ($request->fileLama) {
-                Storage::delete($request->fileLama);
-            }
+        // if($request->file("file_new")) {
+        //     if ($request->fileLama) {
+        //         Storage::delete($request->fileLama);
+        //     }
 
-            $file = $request->file("file_new")->store("buku");
-        }else {
-            $file = $request->filaLama;
-        }
+        //     $file = $request->file("file_new")->store("buku");
+        // }else {
+        //     $file = $request->fileLama;
+        // }
 
         Ebook::where("id", $request->id)->update([
+            "id_buku"   => $request->id_buku,
             "kategori_id"   => $request->kategori_id,
             "subkategori_id"   => $request->subkategori_id,
-            "id_buku"       => $request->id_buku,
             "cover"         => $data,
-            "file"          => $file,
+            // "file"          => $file,
             "judul_buku"    => $request->judul_buku,
             "penulis"       => $request->penulis,
             "tahun_terbit"  => $request->tahun_terbit
