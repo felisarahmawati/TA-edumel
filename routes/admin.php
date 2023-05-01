@@ -43,10 +43,6 @@ Route::group(['middleware' => ['cekUserLogin']], function() {
         });
 
         Route::prefix("pengaturan")->group(function() {
-            // Route::prefix("profile")->group(function() {
-            //     Route::patch('/index/{id}',ProfileController::class, 'update');
-            //     Route::resource('/', ProfileController::class);
-            // });
             Route::prefix("ubahpassword")->group(function() {
                 Route::resource("/", UbahPasswordController::class);
             });

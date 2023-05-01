@@ -35,4 +35,9 @@ class LandingpageController extends Controller
     {
         return view('user.anggota.tampilan.detail_ebook');
     }
+
+    public function artikel()
+    {
+        return view('user.anggota.tampilan.artikel');
+    }
 }

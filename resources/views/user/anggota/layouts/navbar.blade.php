@@ -28,6 +28,10 @@
                             <a href="{{ url('/user/anggota/tampilan/ebook') }}">Ebook</a>
                         </li>
 
+                        <li>
+                            <a href="{{ url('/user/anggota/tampilan/artikel') }}">Artikel</a>
+                        </li>
+
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 {{ Auth::user()->name }}

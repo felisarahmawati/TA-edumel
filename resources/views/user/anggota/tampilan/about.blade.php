@@ -6,7 +6,7 @@
         <div class="row align-items-center justify-content-between">
             <div class="col-xl-5 col-lg-6">
                 <div class="about-img">
-                    <img src="/../..//../../assets/user/images/banner/img_9.png" alt="" class="img-fluid">
+                    <img src="/../../../../assets/user/images/banner/img_9.png" alt="" class="img-fluid">
                 </div>
             </div>
             <div class="col-xl-6 col-lg-6">
@@ -34,11 +34,11 @@
                 <div class="feature-item feature-style-left">
                     <div class="feature-text">
                         <h4>Misi :</h4>
-                        <p style="text-align: justify;"> 1. Memberikan pelayanan yang ramah, tegas, dan tertib</p>
-                        <p style="text-align: justify;"> 2. Menyediakan berbagai koleksi bacaan untuk mengembangkan pengetahuan Taruna/Taruni</p>
-                        <p style="text-align: justify;"> 3. Menjadi Perpustakaan sebagai jantung pendidikan</p>
-                        <p style="text-align: justify;"> 4. Mengembangkan perpustakaan berbasis teknologi informasi</p>
-                        <p style="text-align: justify;"> 5. Meningkatkan minat baca (melalui mading perpustakaan, memberikan reward untuk taruna/taruni yang banyak berkunjung dan sering meminjam, reward untuk guru yang sering menggunakan perpustakaan)</p>
+                        <p style="text-align: justify;"> 1.Memberikan pelayanan yang ramah, tegas, dan tertib</p>
+                        <p style="text-align: justify;"> 2.Menyediakan berbagai koleksi bacaan untuk mengembangkan pengetahuan Taruna/Taruni</p>
+                        <p style="text-align: justify;"> 3.Menjadi Perpustakaan sebagai jantung pendidikan</p>
+                        <p style="text-align: justify;"> 4.Mengembangkan perpustakaan berbasis teknologi informasi</p>
+                        <p style="text-align: justify;"> 5.Meningkatkan minat baca (melalui mading perpustakaan, memberikan reward untuk taruna/taruni yang banyak berkunjung dan sering meminjam, reward untuk guru yang sering menggunakan perpustakaan)</p>
                     </div>
                 </div>
             </div>
@@ -64,8 +64,8 @@
                                 </div>
 
                                 <div class="course-meta">
-                                    <span class="duration"><i class="far fa-user-alt"></i>20 Students</span>
-                                    <span class="lessons"><i class="far fa-play-circle me-2"></i>2 Course</span>
+                                    <span class="duration"><i class="far fa-user-alt"></i></span>
+                                    <span class="lessons"><i class="far fa-play-circle me-2"></i></span>
                                 </div>
                             </div>
                         </div>
@@ -85,8 +85,8 @@
                                     <p>SMK Negeri 2 Indramayu</p>
                                 </div>
                                 <div class="course-meta">
-                                    <span class="duration"><i class="far fa-user-alt"></i>20 Students</span>
-                                    <span class="lessons"><i class="far fa-play-circle me-2"></i>2 Course</span>
+                                    <span class="duration"><i class="far fa-user-alt"></i></span>
+                                    <span class="lessons"><i class="far fa-play-circle me-2"></i></span>
                                 </div>
                             </div>
                         </div>
@@ -109,8 +109,8 @@
                                     <p>SMK Negeri 2 Indramayu</p>
                                 </div>
                                 <div class="course-meta">
-                                    <span class="duration"><i class="far fa-user-alt"></i>20 Students</span>
-                                    <span class="lessons"><i class="far fa-play-circle me-2"></i>2 Course</span>
+                                    <span class="duration"><i class="far fa-user-alt"></i></span>
+                                    <span class="lessons"><i class="far fa-play-circle me-2"></i></span>
                                 </div>
                             </div>
                         </div>
@@ -132,8 +132,8 @@
                                 </div>
 
                                 <div class="course-meta">
-                                    <span class="duration"><i class="far fa-user-alt"></i>20 Students</span>
-                                    <span class="lessons"><i class="far fa-play-circle me-2"></i>2 Course</span>
+                                    <span class="duration"><i class="far fa-user-alt"></i></span>
+                                    <span class="lessons"><i class="far fa-play-circle me-2"></i></span>
                                 </div>
                             </div>
                         </div>

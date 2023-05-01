@@ -75,6 +75,7 @@ Route::group(['middleware' => ['cekUserLogin']], function() {
                 Route::prefix("tampilan")->group(function() {
                     Route::get("/about", "about");
                     Route::get("/ebook", "ebook");
+                    Route::get("/artikel", "artikel");
                     Route::get("/detail_ebook", "detailebook");
                     Route::get("/mading", "mading");
                     Route::get("/detail_mading", "detailmading");
