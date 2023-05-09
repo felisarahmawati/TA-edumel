@@ -43,7 +43,7 @@
                 <div class="woocommerce-notices-wrapper"></div>
                 <div class="login-form">
                     <div class="form-header">
-                        <h2 class="font-weight-bold mb-3">Login</h2>
+                        <h2 class="font-weight-bold mb-3" style="color: #ffffff;">Login</h2>
                         <p>Anggota Perpustakaan SMKN 2 Indramayu</p>
                     </div>
                     <form action="{{ url('login/proses') }}" method="POST" class="forms-sample">

@@ -83,12 +83,7 @@
 
                         <div>
                             <button type="submit" class="btn btn-primary me-2 mb-2 mb-md-0 text-white">Login</a>
-                            <button type="button" class="btn btn-outline-primary btn-icon-text mb-2 mb-md-0">
-                              <i class="btn-icon-prepend" data-feather="twitter"></i>
-                              Login with twitter
-                            </button>
-
-                      </div>
+                        </div>
                     </form>
                   </div>
                 </div>

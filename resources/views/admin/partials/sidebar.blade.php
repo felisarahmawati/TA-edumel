@@ -29,6 +29,18 @@
                     </a>
                 </li>
 
+                <div class="dropdown">
+                    <i class="link-icon" data-feather="clipboard"></i>
+                    <a class="btn btn-light dropdown-toggle"  data-bs-toggle="dropdown"  >
+                      Setting
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="{{ url('admin/tampilan/landingpage') }}">Home</a></li>
+                      <li><a class="dropdown-item" href="#">About</a></li>
+                      <li><a class="dropdown-item" href="#">Footer</a></li>
+                    </ul>
+                </div>
+
                 <li class="nav-item">
                     <a href="{{ url('/admin/sub-kategori') }}" class="nav-link">
                         <i class="link-icon" data-feather="file-text"></i>
