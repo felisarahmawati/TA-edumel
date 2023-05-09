@@ -33,10 +33,37 @@
                         <th class="text-center">Gambar</th>
                         <th class="text-center">Teks 1</th>
                         <th class="text-center">Teks 2</th>
+                        <th class="text-center">Aksi</th>
                     </tr>
                     </thead>
                     <tbody>
+                        @foreach ($home as $item)
+                        <tr>
+                            <td class="text-center">{{ $loop->iteration }}</td>
+                            <td class="text-center"><img src="{{ url('/storage/' .$item->image)}}" style="width: 50%;"></td>
+                            <td class="text-center">{{ $item->teks1 }}</td>
+                            <td class="text-center">{{ $item->teks2 }}</td>
+                            <td class="text-end" style="size: 30px;">
+                                <div class="row">
+                                    <div class="col-md-6 text-end">
+                                        <button onclick="editHome({{ $item->id }})" type="button" class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModalEdit">
+                                            <i class="bi bi-pencil-square"></i>
+                                        </button>
+                                    </div>
 
+                                    <div class="col-md-2 text-end">
+                                        <form action="" method="POST">
+                                            @method('DELETE')
+                                            @csrf
+                                            <button onclick="return confirm('Apakah Anda Yakin ?');" class="btn btn-danger btn-sm" type="submit">
+                                                <i class="bi bi-trash"></i>
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    @endforeach
                     </tbody>
                 </table>
                 </div>
@@ -72,7 +99,7 @@
                     @enderror
                 </div>
                 <div class="form-group">
-                    <label for="teks2">Teks 1</label>
+                    <label for="teks2">Teks 2</label>
                     <input type="text" class="form-control" name="teks2" id="teks2" placeholder="Masukkan teks2"
                     @error('teks2') is-invalid @enderror value="{{ old('teks2') }}">
                     @error('teks2')
@@ -94,7 +121,7 @@
     <div class="modal-dialog modal-lg" style="width:40%">
         <div class="modal-content">
             <div class="modal-header hader">
-                <h3 class="modal-title" id="exampleModalLabel">Edit Mading</h3>
+                <h3 class="modal-title" id="exampleModalLabel">Edit Home</h3>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <form action="" method="POST" enctype="multipart/form-data">
@@ -118,5 +145,19 @@
 <script src="{{ url('') }}/assets/admin/vendors/datatables.net/jquery.dataTables.js"></script>
 <script src="{{ url('') }}/assets/admin/vendors/datatables.net-bs5/dataTables.bootstrap5.js"></script>
 <script src="{{ url('') }}/assets/admin/js/data-table.js"></script>
-
+<script type="text/javascript">
+    function editHome(id) {
+        $.ajax({
+            url: "{{ url('/admin/tampilan/landingpage/edit') }}",
+            type: "GET",
+            data: {
+                id: id
+            },
+            success: function(data) {
+                $("#modal-content-edit").html(data);
+                return true
+            }
+        })
+    }
+</script>
 @endsection

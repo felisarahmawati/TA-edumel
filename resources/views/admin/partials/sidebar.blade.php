@@ -37,7 +37,7 @@
                     <ul class="dropdown-menu">
                       <li><a class="dropdown-item" href="{{ url('admin/tampilan/landingpage') }}">Home</a></li>
                       <li><a class="dropdown-item" href="#">About</a></li>
-                      <li><a class="dropdown-item" href="#">Footer</a></li>
+                      <li><a class="dropdown-item" href="{{ url('admin/tampilan/footer') }}">Footer</a></li>
                     </ul>
                 </div>
 

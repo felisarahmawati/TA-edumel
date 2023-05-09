@@ -7,17 +7,9 @@
 </div>
 <div class="form-group">
     <label for="teks1">Teks 1</label>
-    <input type="text" class="form-control" name="teks1" id="teks1" placeholder="Masukkan teks1"
-    @error('teks1') is-invalid @enderror value="{{ old('teks1') }}">
-    @error('teks1')
-        <div class="alert alert-danger">{{ $message }}</div>
-    @enderror
+    <input type="text" class="form-control" name="teks1" id="teks1" value="{{ $edit->teks1 }}">
 </div>
 <div class="form-group">
     <label for="teks2">Teks 1</label>
-    <input type="text" class="form-control" name="teks2" id="teks2" placeholder="Masukkan teks2"
-    @error('teks2') is-invalid @enderror value="{{ old('teks2') }}">
-    @error('teks2')
-        <div class="alert alert-danger">{{ $message }}</div>
-    @enderror
+    <input type="text" class="form-control" name="teks2" id="teks2" value="{{ $edit->teks2 }}">
 </div>

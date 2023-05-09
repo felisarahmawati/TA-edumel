@@ -5,13 +5,12 @@ namespace App\Models\Admin\Tampilan;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Home extends Model
+class About extends Model
 {
     use HasFactory;
 
-    protected $table = "tampilanhome";
+    protected $table = "tampilanabout";
 
-    protected $fillable = [
-        'image', 'teks1', 'teks2',
-    ];
+    protected $guarded = [''];
+
 }

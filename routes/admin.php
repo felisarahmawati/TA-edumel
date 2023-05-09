@@ -15,6 +15,8 @@ use App\Http\Controllers\Admin\Master\KategoriController;
 use App\Http\Controllers\Admin\Master\SubKategoriController;
 use App\Http\Controllers\Admin\Pengaturan\ProfileController;
 use App\Http\Controllers\Admin\Pengaturan\UbahPasswordController;
+use App\Http\Controllers\Admin\Tampilan\AboutController;
+use App\Http\Controllers\Admin\Tampilan\FooterController;
 use App\Http\Controllers\Admin\Tampilan\TampilanHomeController;
 use App\Http\Controllers\Admin\Verifikasi\MadingController as VerifikasiMadingController;
 
@@ -51,7 +53,14 @@ Route::group(['middleware' => ['cekUserLogin']], function() {
 
         Route::prefix("tampilan")->group(function() {
             Route::prefix("landingpage")->group(function() {
+                Route::get("/edit", [TampilanHomeController::class, "edit"]);
                 Route::resource("/", TampilanHomeController::class);
+            });
+            Route::prefix("footer")->group(function() {
+                Route::resource("/", FooterController::class);
+            });
+            Route::prefix("about")->group(function() {
+                Route::resource("/", AboutController::class);
             });
         });
 
