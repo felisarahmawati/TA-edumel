@@ -87,13 +87,7 @@
                 @csrf
                 <div class="modal-body">
                     <div class="row">
-                        <div class="col-sm-6">
-                            <div class="mb-3">
-                                <label class="form-label">Id Buku</label>
-                                <input type="date" name="id_buku" class="form-control @error('id_buku') is-invalid @enderror" placeholder="Tambahkan Id buku">
-                            </div>
-                        </div><!-- Col -->
-                        <div class="col-sm-6">
+                        <div class="col-sm-12">
                             <div class="mb-3">
                                 <label class="judul_buku">Judul Buku</label>
                                 <input type="text" name="judul_buku" class="form-control @error('judul_buku') is-invalid @enderror" placeholder="Tambahkan judul buku">

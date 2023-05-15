@@ -47,13 +47,19 @@
                                 <td class="text-center">{{ $item->buat }}</td>
                                 <td style="size: 20px;">
                                     <div class="row">
-                                        <div class="col-md-6 text-end">
+                                        <div class="col-md-4 text-end">
                                             <button onclick="editMading({{ $item->id }})" type="button" class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModalEdit">
                                                 <i class="bi bi-pencil-square"></i>
                                             </button>
                                         </div>
 
-                                        <div class="col-md-3 text-end">
+                                        <div class="col-md-4 text-end">
+                                            <button onclick="" type="button" class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModalDetail">
+                                                <i class="bi bi-list"></i>
+                                            </button>
+                                        </div>
+
+                                        <div class="col-md-4 text-end">
                                             <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{ url('majding/destroy', $item->id) }}" method="POST">
                                                 @csrf
                                                 @method('DELETE')
@@ -140,6 +146,25 @@
         </div>
     </div>
 </div>
+
+<!-- Form Deatil -->
+<div class="modal fade" id="exampleModalDetail" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" style="width: 40%">
+        <div class="modal-content">
+            <div class="modal-header hader">
+                <h3 class="modal-title" id="exampleModalLabel">
+                    Detail Mading
+                </h3>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" id="modal-content-detail">
+            </div>
+            <div class="modal-footer d-md-block">
+                <button type="button" class="btn btn-danger btn-sm" data-bs-dismiss="modal" aria-label="Close">Kembali</button>
+            </div>
+        </div>
+    </div>
+</div>
 @endsection
 
 @section('js')
@@ -161,5 +186,6 @@
             }
         })
     }
+
 </script>
 @endsection

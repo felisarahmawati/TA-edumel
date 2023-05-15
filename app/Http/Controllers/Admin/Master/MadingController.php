@@ -79,6 +79,14 @@ class MadingController extends Controller
         return back();
     }
 
+    public function show(Request $request)
+    {
+        $data = [
+            "detail" => Mading::where("id", $request->id)->first()
+        ];
+
+        return view("admin.majding.detail", $data);
+    }
 
     public function destroy(Mading $majding)
     {

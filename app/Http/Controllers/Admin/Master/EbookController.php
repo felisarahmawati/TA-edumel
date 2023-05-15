@@ -45,7 +45,6 @@ class EbookController extends Controller
         }
 
         Ebook::create([
-            "id_buku"   => $request->id_buku,
             "kategori_id"   => $request->kategori_id,
             "subkategori_id" => $request->subkategori_id,
             "cover"         => $data,
@@ -72,7 +71,6 @@ class EbookController extends Controller
     public function update(Request $request)
     {
         $this->validate($request, [
-            "id_buku"   => '',
             "kategori_id"   => '',
             "subkategori_id"=> '',
             "cover"         => 'mimes:jpg,jpeg,png',
@@ -102,7 +100,6 @@ class EbookController extends Controller
         // }
 
         Ebook::where("id", $request->id)->update([
-            "id_buku"   => $request->id_buku,
             "kategori_id"   => $request->kategori_id,
             "subkategori_id"   => $request->subkategori_id,
             "cover"         => $data,

@@ -76,4 +76,5 @@ class TampilanHomeController extends Controller
 
         return back();
     }
+
 }

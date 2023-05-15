@@ -114,7 +114,7 @@
 </div>
 <!-- END -->
 
-<!-- Form Edit -->
+<!-- Form Deatil -->
 <div class="modal fade" id="exampleModalDetail" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg" style="width: 40%">
         <div class="modal-content">

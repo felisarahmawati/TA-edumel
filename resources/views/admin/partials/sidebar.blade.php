@@ -21,81 +21,133 @@
                     </a>
                 </li>
 
-                <li class="nav-item nav-category">Menu</li>
-                <li class="nav-item">
-                    <a href="{{ url('/admin/kategori') }}" class="nav-link">
-                        <i class="link-icon" data-feather="clipboard"></i>
-                        <span class="link-title">Kategori</span>
-                    </a>
+                <li class="nav-item nav-category">
+                    Menu
                 </li>
-
-                <div class="dropdown">
-                    <i class="link-icon" data-feather="clipboard"></i>
-                    <a class="btn btn-light dropdown-toggle"  data-bs-toggle="dropdown"  >
-                      Setting
-                    </a>
-                    <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="{{ url('admin/tampilan/landingpage') }}">Home</a></li>
-                      <li><a class="dropdown-item" href="#">About</a></li>
-                      <li><a class="dropdown-item" href="{{ url('admin/tampilan/footer') }}">Footer</a></li>
-                    </ul>
-                </div>
-
                 <li class="nav-item">
-                    <a href="{{ url('/admin/sub-kategori') }}" class="nav-link">
-                        <i class="link-icon" data-feather="file-text"></i>
-                        <span class="link-title">Sub Kategori</span>
+                    <a class="nav-link" data-bs-toggle="collapse" href="#ebooks" role="button" aria-expanded="false" aria-controls="ebooks">
+                        <i class="link-icon" data-feather="book">
+                        </i>
+                        <span class="link-title">
+                            Ebook
+                        </span>
+                        <i class="link-arrow" data-feather="chevron-down">
+                        </i>
                     </a>
-                </li>
-
-                <li class="nav-item">
-                    <a href="{{ url('/admin/buku') }}" class="nav-link">
-                        <i class="link-icon" data-feather="book-open"></i>
-                        <span class="link-title">Buku or Ebook</span>
-                    </a>
+                    <div class="collapse" id="ebooks">
+                        <ul class="nav sub-menu">
+                            <li class="nav-item">
+                                <a href="{{ url('/admin/kategori') }}" class="nav-link">
+                                    Kategori
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ url('/admin/sub-kategori') }}" class="nav-link">
+                                    Sub Kategori
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ url('/admin/buku') }}" class="nav-link">
+                                    Buku
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                 </li>
 
                 <li class="nav-item">
                     <a href="{{ url('/admin/majding') }}" class="nav-link">
-                        <i class="link-icon" data-feather="camera"></i>
+                        <i class="link-icon" data-feather="image"></i>
                         <span class="link-title">Mading</span>
                     </a>
                 </li>
 
-                <li class="nav-item nav-category">Verifikasi</li>
                 <li class="nav-item">
-                    <a href="{{ url("/admin/verifikasi/v_ebook") }}" class="nav-link">
-                        <i class="link-icon" data-feather="check-circle"></i>
-                        <span class="link-title">Buku</span>
+                    <a class="nav-link" data-bs-toggle="collapse" href="#verifikasi" role="button" aria-expanded="false" aria-controls="verifikasi">
+                        <i class="link-icon" data-feather="check-circle">
+                        </i>
+                        <span class="link-title">
+                            Verifikasi
+                        </span>
+                        <i class="link-arrow" data-feather="chevron-down">
+                        </i>
                     </a>
-                </li>
-                <li class="nav-item">
-                    <a href="{{ url("/admin/verifikasi/v_mading") }}" class="nav-link">
-                        <i class="link-icon" data-feather="check-square"></i>
-                        <span class="link-title">Mading</span>
-                    </a>
-                </li>
-
-                <li class="nav-item nav-category">Laporan</li>
-                <li class="nav-item">
-                    <a href="{{ url("/admin/laporan/dataanggota") }}" class="nav-link">
-                        <i class="link-icon" data-feather="folder"></i>
-                        <span class="link-title">Data Anggota</span>
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a href="{{ url("/admin/laporan/dataebook") }}" class="nav-link">
-                        <i class="link-icon" data-feather="book"></i>
-                        <span class="link-title">Data Ebook</span>
-                    </a>
+                    <div class="collapse" id="verifikasi">
+                        <ul class="nav sub-menu">
+                            <li class="nav-item">
+                                <a href="{{ url("/admin/verifikasi/v_ebook") }}" class="nav-link">
+                                    Buku
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ url("/admin/verifikasi/v_mading") }}" class="nav-link">
+                                    Mading
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                 </li>
 
                 <li class="nav-item">
-                    <a href="{{ url("/admin/laporan/datamading") }}" class="nav-link">
-                        <i class="link-icon" data-feather="clipboard"></i>
-                        <span class="link-title">Data Mading</span>
+                    <a class="nav-link" data-bs-toggle="collapse" href="#folders" role="button" aria-expanded="false" aria-controls="folders">
+                        <i class="link-icon" data-feather="folder">
+                        </i>
+                        <span class="link-title">
+                            Laporan
+                        </span>
+                        <i class="link-arrow" data-feather="chevron-down">
+                        </i>
                     </a>
+                    <div class="collapse" id="folders">
+                        <ul class="nav sub-menu">
+                            <li class="nav-item">
+                                <a href="{{ url("/admin/laporan/dataanggota") }}" class="nav-link">
+                                    Data Anggota
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ url("/admin/laporan/dataebook") }}" class="nav-link">
+                                    Data Ebook
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ url("/admin/laporan/datamading") }}" class="nav-link">
+                                    Data Mading
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" data-bs-toggle="collapse" href="#emails" role="button" aria-expanded="false" aria-controls="emails">
+                        <i class="link-icon" data-feather="settings">
+                        </i>
+                        <span class="link-title">
+                            Setting
+                        </span>
+                        <i class="link-arrow" data-feather="chevron-down">
+                        </i>
+                    </a>
+                    <div class="collapse" id="emails">
+                        <ul class="nav sub-menu">
+                            <li class="nav-item">
+                                <a href="{{ url('admin/tampilan/landingpage') }}" class="nav-link">
+                                    Home
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#"  class="nav-link">
+                                    About
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ url('admin/tampilan/footer') }}"  class="nav-link">
+                                    Footer
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                 </li>
 
                 <li class="nav-item nav-category">Master</li>
