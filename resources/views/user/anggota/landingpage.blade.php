@@ -7,8 +7,8 @@
             <div class="col-md-12 col-xl-6 col-lg-6">
                 <div class="banner-content ">
                     <span class="subheading"></span>
-                    <h1>{{ $detail->teks1 }}</h1>
-                    <p class="mb-40">{{ $detail->teks2 }}</p>
+                    <h1>Selamat Datang Di Perpustakaan SMK Negeri 2 Indramayu</h1>
+                    <p class="mb-40">Aplikasi L-Ebook menyediakan berbagai buku fiksi dan non - fiksi populer</p>
 
                     <div class="btn-container">
                         <a href="{{ url('/user/anggota/tampilan/ebook') }}" class="btn btn-white rounded ms-2">Dapatkan Disini</a>

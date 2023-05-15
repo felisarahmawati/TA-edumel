@@ -1,4 +1,4 @@
-<section class="footer footer-3 pt-250">
+<section class="footer footer-3 pt-200">
 	<div class="footer-mid">
 		<div class="container">
 			<div class="row">

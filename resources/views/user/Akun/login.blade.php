@@ -49,7 +49,7 @@
                     <form action="{{ url('login/proses') }}" method="POST" class="forms-sample">
                         @csrf
                         <div class="mb-3">
-                            <label for="username" class="form-label">Username</label>
+                            <label for="username" class="form-label">Nomor Induk Siswa</label>
                             <input type="text" name="username" class="form-control" id="username" placeholder="Masukkan Nomor Induk Siswa">
                             @error('username')
                                 <div class="invalid-feedback">
